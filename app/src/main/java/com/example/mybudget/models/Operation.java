@@ -1,24 +1,19 @@
 package com.example.mybudget.models;
 
-import java.util.List;
 
-
-public class OperationItem {
+public class Operation {
     private String operationName;
     private String operationAuthor;
     private String operationDate;
-    private List<String> operations;
-    private int operationSum;
+    private String operationSum;
 
-    public OperationItem(String operationName, String operationAuthor, String operationDate,
-                         List<String> operations, int operationSum) {
+    public Operation(String operationName, String operationAuthor, String operationDate,
+                     int operationSum) {
         this.operationName = operationName;
         this.operationAuthor = operationAuthor;
         this.operationDate = operationDate;
-        this.operations = operations;
-        this.operationSum = operationSum;
+        this.operationSum = Integer.toString(operationSum) + '₽';
     }
-
 
     public String getOperationName() {
         return operationName;
@@ -32,11 +27,7 @@ public class OperationItem {
         return operationDate;
     }
 
-    public List<String> getOperations() {
-        return operations;
-    }
-
-    public int getOperationSum() {
+    public String getOperationSum() {
         return operationSum;
     }
 
@@ -52,11 +43,7 @@ public class OperationItem {
         this.operationName = operationName;
     }
 
-    public void setOperations(List<String> operations) {
-        this.operations = operations;
-    }
-
     public void setOperationSum(int operationSum) {
-        this.operationSum = operationSum;
+        this.operationSum = Integer.toString(operationSum) + '₽';
     }
 }
