@@ -1,6 +1,5 @@
 package com.example.mybudget.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -18,12 +17,12 @@ public class OperationAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final LayoutInflater inflater;
     private final List<Operation> operations;
 
-    public OperationAdapter(Context context,
+    public OperationAdapter(LayoutInflater layoutInflater,
                             List<Operation> operations,
                             OnOperationClickListener onClickListener) {
         this.onClickListener = onClickListener;
         this.operations = operations;
-        this.inflater = LayoutInflater.from(context);
+        this.inflater = layoutInflater;
     }
 
     @NonNull
@@ -43,7 +42,7 @@ public class OperationAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getOperationAuthor().setText(operation.getOperationAuthor());
         holder.getOperationDate().setText(operation.getOperationDate());
 
-        holder.itemView.setOnClickListener(v ->
+        holder.itemView.setOnClickListener(view ->
                 onClickListener.onOperationClick(operation, position));
     }
 

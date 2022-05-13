@@ -1,9 +1,9 @@
 package com.example.mybudget.adapter;
 
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mybudget.R;
@@ -14,7 +14,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     private final TextView operationAuthor;
     private final TextView operationDate;
 
-    public ViewHolder(View view) {
+    public ViewHolder(@NonNull View view) {
         super(view);
         operationName = view.findViewById(R.id.operation_name);
         operationSum = view.findViewById(R.id.operation_sum);

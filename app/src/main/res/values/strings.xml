@@ -8,4 +8,5 @@
     <string name="operation_sum">Operation Sum</string>
     <string name="operation_date">Operation Date</string>
     <string name="operation_description">No description</string>
+    <string name="add_operation">add operation</string>
 </resources>

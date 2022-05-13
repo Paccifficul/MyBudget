@@ -2,6 +2,8 @@ package com.example.mybudget.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,32 +23,37 @@ import java.util.ArrayList;
 public class FragmentHome extends Fragment {
     ArrayList<Operation> operations = new ArrayList<>();
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view_operations_list);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         setInitialData();
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
 
-        // Определяем слушателя нажатия элемента в списке
-        OnOperationClickListener operationClickListener = (operation, position) ->
-                Toast.makeText(view.getContext(), "message", Toast.LENGTH_SHORT).show();
-
-        recyclerView.setAdapter(new OperationAdapter(view.getContext(), operations, operationClickListener));
-
-        return view;
+    @Override
+    public void onViewCreated(@NonNull @org.jetbrains.annotations.NotNull View view,
+                              @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        updateAdapter();
     }
 
     private void setInitialData() {
         operations.clear();
+        for (int i = 0; i < 20; i++)
         operations.add(new Operation(
                 "Теремок",
                 "Дмитрий",
                 "04.01.2022",
-                943));
+                341));
+    }
+
+    private void updateAdapter() {
+        RecyclerView recyclerView = requireView().findViewById(R.id.recycler_view_operations_list);
+        OnOperationClickListener operationClickListener = (operation, position) ->
+                Toast.makeText(getContext(), "message", Toast.LENGTH_LONG).show();
+
+        recyclerView.setAdapter(new OperationAdapter(
+                getLayoutInflater(), operations, operationClickListener));
     }
 }
