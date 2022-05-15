@@ -13,6 +13,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     private final TextView operationSum;
     private final TextView operationAuthor;
     private final TextView operationDate;
+    private final TextView operationDesc;
 
     public ViewHolder(@NonNull View view) {
         super(view);
@@ -20,6 +21,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         operationSum = view.findViewById(R.id.operation_sum);
         operationAuthor = view.findViewById(R.id.operation_author);
         operationDate = view.findViewById(R.id.operation_date);
+        operationDesc = view.findViewById(R.id.operation_description);
     }
 
     public TextView getOperationName() {
@@ -36,5 +38,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     public TextView getOperationDate() {
         return operationDate;
+    }
+
+    public TextView getOperationDesc() {
+        return operationDesc;
     }
 }

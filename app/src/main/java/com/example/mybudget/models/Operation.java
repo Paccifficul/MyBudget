@@ -6,13 +6,15 @@ public class Operation {
     private String operationAuthor;
     private String operationDate;
     private String operationSum;
+    private String operationDesc;
 
     public Operation(String operationName, String operationAuthor, String operationDate,
-                     int operationSum) {
+                     int operationSum, String operationDesc) {
         this.operationName = operationName;
         this.operationAuthor = operationAuthor;
         this.operationDate = operationDate;
         this.operationSum = Integer.toString(operationSum) + '₽';
+        this.operationDesc = operationDesc;
     }
 
     public String getOperationName() {
@@ -31,6 +33,11 @@ public class Operation {
         return operationSum;
     }
 
+    public String getOperationDesc() {
+        return operationDesc;
+    }
+
+
     public void setOperationAuthor(String operationAuthor) {
         this.operationAuthor = operationAuthor;
     }
@@ -45,5 +52,9 @@ public class Operation {
 
     public void setOperationSum(int operationSum) {
         this.operationSum = Integer.toString(operationSum) + '₽';
+    }
+
+    public void setOperationDesc(String operationDesc) {
+        this.operationDesc = operationDesc;
     }
 }

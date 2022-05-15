@@ -41,6 +41,7 @@ public class OperationAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getOperationSum().setText(operation.getOperationSum());
         holder.getOperationAuthor().setText(operation.getOperationAuthor());
         holder.getOperationDate().setText(operation.getOperationDate());
+        holder.getOperationDesc().setText(operation.getOperationDesc());
 
         holder.itemView.setOnClickListener(view ->
                 onClickListener.onOperationClick(operation, position));

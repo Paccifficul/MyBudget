@@ -40,12 +40,13 @@ public class FragmentHome extends Fragment {
 
     private void setInitialData() {
         operations.clear();
-        for (int i = 0; i < 20; i++)
+        // for (int i = 0; i < 20; i++)
         operations.add(new Operation(
                 "Теремок",
                 "Дмитрий",
                 "04.01.2022",
-                341));
+                341,
+                "No Description"));
     }
 
     private void updateAdapter() {
