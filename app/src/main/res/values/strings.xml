@@ -1,0 +1,26 @@
+<resources>
+    <!-- APP VALUES -->
+    <string name="app_name">Мой бюджет</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- OPERATION VALUES -->
+    <string name="operation_name">Operation Name</string>
+    <string name="operation_sum">Operation Sum</string>
+    <string name="operation_date">Operation Date</string>
+    <string name="operation_description">Operation Description</string>
+    <string name="add_operation">add operation</string>
+    <string name="operation">Operation</string>
+    <string name="go_back">back</string>
+    <string name="title_activity_nav_drawer">NavDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="bankName">bankName</string>
+    <string name="balance">balance</string>
+</resources>
