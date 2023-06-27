@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.mybudget.R;
-import com.example.mybudget.adapter.OperationAdapter;
+import com.example.mybudget.adapters.OperationAdapter;
 import com.example.mybudget.interfaces.OnOperationClickListener;
 import com.example.mybudget.models.Operation;
 
@@ -34,6 +34,7 @@ public class FragmentOperations extends Fragment {
     public void onViewCreated(@NonNull @org.jetbrains.annotations.NotNull View view,
                               @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         updateAdapter();
     }
 

@@ -1,4 +1,4 @@
-package com.example.mybudget.adapter;
+package com.example.mybudget.adapters;
 
 import android.view.View;
 import android.widget.TextView;

@@ -14,7 +14,7 @@
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <!--<com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
