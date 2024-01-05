@@ -2,17 +2,21 @@ package com.example.mybudget.models;
 
 
 public class Operation {
+    private int operationNum;
     private String operationName;
     private String operationDate;
     private String operationSum;
     private String operationDesc;
+    private String operationCategory;
 
-    public Operation(String operationName, String operationDate,
-                     int operationSum, String operationDesc) {
+    public Operation(int operationNum, String operationName, String operationDate,
+                     int operationSum, String operationDesc, String operationCategory) {
+        this.operationNum = operationNum;
         this.operationName = operationName;
         this.operationDate = operationDate;
         this.operationSum = Integer.toString(operationSum) + '₽';
         this.operationDesc = operationDesc;
+        this.operationCategory = operationCategory;
     }
 
     public String getOperationName() {
@@ -31,6 +35,10 @@ public class Operation {
         return operationDesc;
     }
 
+    public String getOperationCategory() { return operationCategory; }
+
+    public void setOperationNum(int operationNum) { this.operationNum = operationNum; }
+
     public void setOperationDate(String operationDate) {
         this.operationDate = operationDate;
     }
@@ -45,5 +53,9 @@ public class Operation {
 
     public void setOperationDesc(String operationDesc) {
         this.operationDesc = operationDesc;
+    }
+
+    public void setOperationCategory(String operationCategory) {
+        this.operationCategory = operationCategory;
     }
 }

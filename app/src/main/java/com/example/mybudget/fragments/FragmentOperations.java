@@ -14,13 +14,16 @@ import android.widget.Toast;
 
 import com.example.mybudget.R;
 import com.example.mybudget.adapters.OperationAdapter;
+import com.example.mybudget.database.DatabaseExecutor;
+import com.example.mybudget.database.DatabaseHelper;
 import com.example.mybudget.interfaces.OnOperationClickListener;
 import com.example.mybudget.models.Operation;
 
 import java.util.ArrayList;
 
 public class FragmentOperations extends Fragment {
-    private final ArrayList<Operation> operations = new ArrayList<>();
+    private ArrayList<Operation> operations;
+    private final DatabaseExecutor databaseExecutor = new DatabaseExecutor(new DatabaseHelper(getContext()));
 
     @Nullable
     @Override
@@ -39,13 +42,14 @@ public class FragmentOperations extends Fragment {
     }
 
     private void setInitialData() {
-        operations.clear();
+        operations = databaseExecutor.getData();
         // for (int i = 0; i < 20; i++)
-        operations.add(new Operation(
-                "Теремок",
-                "04.01.2022",
-                341,
-                "No Description"));
+        //operations.add(new Operation(
+          //      "Теремок",
+            //    "04.01.2022",
+              //  341,
+                //"No Description",
+                //"Еда"));
     }
 
     private void updateAdapter() {

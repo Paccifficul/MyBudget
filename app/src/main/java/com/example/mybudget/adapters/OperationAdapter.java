@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mybudget.R;
 import com.example.mybudget.interfaces.OnOperationClickListener;
 import com.example.mybudget.models.Operation;
+import com.example.mybudget.viewHolders.OperationViewHolder;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationViewHolder> 
         holder.getOperationSum().setText(operation.getOperationSum());
         holder.getOperationDate().setText(operation.getOperationDate());
         holder.getOperationDesc().setText(operation.getOperationDesc());
+        holder.getOperationCategory().setText(operation.getOperationCategory());
 
         holder.itemView.setOnClickListener(view ->
                 onClickListener.onOperationClick(operation, position));
