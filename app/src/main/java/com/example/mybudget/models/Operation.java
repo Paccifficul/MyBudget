@@ -1,22 +1,47 @@
 package com.example.mybudget.models;
 
 
+import com.example.mybudget.enums.CurrencyEnum;
+import com.example.mybudget.enums.OperationType;
+import com.example.mybudget.enums.PurchaseCategory;
+
 public class Operation {
-    private int operationNum;
     private String operationName;
     private String operationDate;
     private String operationSum;
     private String operationDesc;
-    private String operationCategory;
+    private PurchaseCategory operationCategory;
+    private CurrencyEnum currencyEnum;
+    private OperationType operationType;
 
-    public Operation(int operationNum, String operationName, String operationDate,
-                     int operationSum, String operationDesc, String operationCategory) {
-        this.operationNum = operationNum;
+    public Operation(String operationName, String operationDate, CurrencyEnum currencyEnum,
+                     int operationSum, OperationType operationType, String operationDesc,
+                     PurchaseCategory operationCategory) {
+        this.operationType = operationType;
         this.operationName = operationName;
         this.operationDate = operationDate;
-        this.operationSum = Integer.toString(operationSum) + '₽';
+        this.currencyEnum = currencyEnum;
         this.operationDesc = operationDesc;
         this.operationCategory = operationCategory;
+        switch (this.currencyEnum) {
+            case USD:
+                this.operationSum = Integer.toString(operationSum) + '$';
+                break;
+            case RUB:
+                this.operationSum = Integer.toString(operationSum) + '₽';
+                break;
+            case EUR:
+                this.operationSum = Integer.toString(operationSum) + '€';
+                break;
+            case ZLOTY:
+                this.operationSum = Integer.toString(operationSum) + "zł";
+                break;
+            case BYR:
+                this.operationSum = Integer.toString(operationSum) + "Br";
+                break;
+            default:
+                break;
+        }
     }
 
     public String getOperationName() {
@@ -35,9 +60,13 @@ public class Operation {
         return operationDesc;
     }
 
-    public String getOperationCategory() { return operationCategory; }
+    public PurchaseCategory getOperationCategory() { return operationCategory; }
 
-    public void setOperationNum(int operationNum) { this.operationNum = operationNum; }
+    public CurrencyEnum getCurrencyEnum() { return currencyEnum; }
+
+    public OperationType getOperationType() {
+        return operationType;
+    }
 
     public void setOperationDate(String operationDate) {
         this.operationDate = operationDate;
@@ -48,14 +77,40 @@ public class Operation {
     }
 
     public void setOperationSum(int operationSum) {
-        this.operationSum = Integer.toString(operationSum) + '₽';
+        switch (currencyEnum) {
+            case USD:
+                this.operationSum = Integer.toString(operationSum) + '$';
+                break;
+            case RUB:
+                this.operationSum = Integer.toString(operationSum) + '₽';
+                break;
+            case EUR:
+                this.operationSum = Integer.toString(operationSum) + '€';
+                break;
+            case ZLOTY:
+                this.operationSum = Integer.toString(operationSum) + "zł";
+                break;
+            case BYR:
+                this.operationSum = Integer.toString(operationSum) + "Br";
+                break;
+            default:
+                break;
+        }
     }
 
     public void setOperationDesc(String operationDesc) {
         this.operationDesc = operationDesc;
     }
 
-    public void setOperationCategory(String operationCategory) {
+    public void setOperationCategory(PurchaseCategory operationCategory) {
         this.operationCategory = operationCategory;
+    }
+
+    public void setCurrencyEnum(CurrencyEnum currencyEnum) {
+        this.currencyEnum = currencyEnum;
+    }
+
+    public void setOperationType(OperationType operationType) {
+        this.operationType = operationType;
     }
 }

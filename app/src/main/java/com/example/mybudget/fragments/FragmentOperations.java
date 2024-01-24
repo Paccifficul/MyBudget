@@ -14,16 +14,13 @@ import android.widget.Toast;
 
 import com.example.mybudget.R;
 import com.example.mybudget.adapters.OperationAdapter;
-import com.example.mybudget.database.DatabaseExecutor;
-import com.example.mybudget.database.DatabaseHelper;
 import com.example.mybudget.interfaces.OnOperationClickListener;
 import com.example.mybudget.models.Operation;
 
 import java.util.ArrayList;
 
 public class FragmentOperations extends Fragment {
-    private ArrayList<Operation> operations;
-    private final DatabaseExecutor databaseExecutor = new DatabaseExecutor(new DatabaseHelper(getContext()));
+    private ArrayList<Operation> operations = new ArrayList<>();
 
     @Nullable
     @Override
@@ -42,7 +39,7 @@ public class FragmentOperations extends Fragment {
     }
 
     private void setInitialData() {
-        operations = databaseExecutor.getData();
+        operations.clear();
         // for (int i = 0; i < 20; i++)
         //operations.add(new Operation(
           //      "Теремок",
@@ -59,5 +56,9 @@ public class FragmentOperations extends Fragment {
 
         recyclerView.setAdapter(new OperationAdapter(
                 getLayoutInflater(), operations, operationClickListener));
+    }
+
+    public void addOperation(Operation operation) {
+        operations.add(operation);
     }
 }
