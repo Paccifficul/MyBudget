@@ -25,4 +25,9 @@
     <string name="balance">balance</string>
     <string name="operation_category">Operation Category</string>
     <string name="confirmoperation">confirmOperation</string>
+
+    <string name="name_purchase">Название</string>
+    <string name="price_purchase">Стоимость</string>
+    <string name="date_purchase">Дата покупки</string>
+    <string name="null_purchases">В этом временном промежутке у Вас не было трат</string>
 </resources>

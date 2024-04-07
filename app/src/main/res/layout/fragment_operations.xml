@@ -21,10 +21,10 @@
         android:contentDescription="@string/add_operation"
         android:onClick="onClickAddOperation"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_operations_list"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.mybudget.fragments.FragmentData"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

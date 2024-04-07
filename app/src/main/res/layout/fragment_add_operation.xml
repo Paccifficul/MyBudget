@@ -33,26 +33,38 @@
         app:srcCompat="@drawable/ic_arrow_back"
         tools:ignore="RtlHardcoded" />
 
-    <EditText
-        android:id="@+id/editTextNumberDecimal"
+
+    <TextView
+        android:id="@+id/namePurchase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:text="@string/name_purchase"
+        android:textSize="22sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="120sp"
+        tools:ignore="RelativeOverlap" />
+
+    <EditText
+        android:id="@+id/editNameGoods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="50sp"
-        android:layout_marginTop="25sp"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textSize="24sp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="100sp"
+        android:ems="9"
+        android:inputType="text"
+        android:textSize="22sp"
+        tools:ignore="LabelFor,RelativeOverlap,SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50sp"
-        android:layout_marginTop="25sp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="170sp"
         app:cardCornerRadius="15sp">
 
         <Spinner
@@ -65,14 +77,85 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="140sp"
+        app:cardCornerRadius="15sp">
 
         <Spinner
             android:id="@+id/category_spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="200sp"
+        app:cardCornerRadius="15sp">
+
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/pricePurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_purchase"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="14sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="250sp"
+        tools:ignore="RelativeOverlap" />
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="230sp"
+        android:ems="9"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        tools:ignore="LabelFor,RelativeOverlap,SpeakableTextPresentCheck"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/datePurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/date_purchase"
+        android:textSize="14sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="320sp"
+        tools:ignore="RelativeOverlap" />
+
+    <EditText
+        android:id="@+id/editOpDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:ems="9"
+        android:inputType="date"
+        android:textSize="14sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="300sp"
+        android:autofillHints=""
+        tools:ignore="LabelFor,RelativeOverlap" />
 
 </RelativeLayout>

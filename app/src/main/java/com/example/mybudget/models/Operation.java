@@ -1,43 +1,42 @@
 package com.example.mybudget.models;
 
 
-import com.example.mybudget.enums.CurrencyEnum;
-import com.example.mybudget.enums.OperationType;
-import com.example.mybudget.enums.PurchaseCategory;
-
 public class Operation {
     private String operationName;
     private String operationDate;
-    private String operationSum;
+    private String operationSumSTRING;
+    private int operationSumINT;
     private String operationDesc;
-    private PurchaseCategory operationCategory;
-    private CurrencyEnum currencyEnum;
-    private OperationType operationType;
+    private String operationCategory;
+    private String operationCurrency;
+    private String operationType;
 
-    public Operation(String operationName, String operationDate, CurrencyEnum currencyEnum,
-                     int operationSum, OperationType operationType, String operationDesc,
-                     PurchaseCategory operationCategory) {
+    public Operation(String operationName, String operationDate, String operationCurrency,
+                     int operationSum, String operationType, String operationDesc,
+                     String operationCategory) {
         this.operationType = operationType;
         this.operationName = operationName;
         this.operationDate = operationDate;
-        this.currencyEnum = currencyEnum;
+        this.operationCurrency = operationCurrency;
         this.operationDesc = operationDesc;
         this.operationCategory = operationCategory;
-        switch (this.currencyEnum) {
-            case USD:
-                this.operationSum = Integer.toString(operationSum) + '$';
+        this.operationSumINT = operationSum;
+
+        switch (this.operationCurrency) {
+            case "USD":
+                this.operationSumSTRING = Integer.toString(operationSum) + '$';
                 break;
-            case RUB:
-                this.operationSum = Integer.toString(operationSum) + '₽';
+            case "RUB":
+                this.operationSumSTRING = Integer.toString(operationSum) + '₽';
                 break;
-            case EUR:
-                this.operationSum = Integer.toString(operationSum) + '€';
+            case "EUR":
+                this.operationSumSTRING = Integer.toString(operationSum) + '€';
                 break;
-            case ZLOTY:
-                this.operationSum = Integer.toString(operationSum) + "zł";
+            case "ZLOTY":
+                this.operationSumSTRING = Integer.toString(operationSum) + "zł";
                 break;
-            case BYR:
-                this.operationSum = Integer.toString(operationSum) + "Br";
+            case "BYR":
+                this.operationSumSTRING = Integer.toString(operationSum) + "Br";
                 break;
             default:
                 break;
@@ -52,19 +51,20 @@ public class Operation {
         return operationDate;
     }
 
-    public String getOperationSum() {
-        return operationSum;
+    public String getOperationSumSTRING() {
+        return operationSumSTRING;
     }
+    public int getOperationSumINT() { return operationSumINT; }
 
     public String getOperationDesc() {
         return operationDesc;
     }
 
-    public PurchaseCategory getOperationCategory() { return operationCategory; }
+    public String getOperationCategory() { return operationCategory; }
 
-    public CurrencyEnum getCurrencyEnum() { return currencyEnum; }
+    public String getOperationCurrency() { return operationCurrency; }
 
-    public OperationType getOperationType() {
+    public String getOperationType() {
         return operationType;
     }
 
@@ -76,41 +76,41 @@ public class Operation {
         this.operationName = operationName;
     }
 
-    public void setOperationSum(int operationSum) {
-        switch (currencyEnum) {
-            case USD:
-                this.operationSum = Integer.toString(operationSum) + '$';
+    public void setOperationSumSTRING(int operationSumSTRING) {
+        switch (this.operationCurrency) {
+            case "USD":
+                this.operationSumSTRING = Integer.toString(operationSumSTRING) + '$';
                 break;
-            case RUB:
-                this.operationSum = Integer.toString(operationSum) + '₽';
+            case "RUB":
+                this.operationSumSTRING = Integer.toString(operationSumSTRING) + '₽';
                 break;
-            case EUR:
-                this.operationSum = Integer.toString(operationSum) + '€';
+            case "EUR":
+                this.operationSumSTRING = Integer.toString(operationSumSTRING) + '€';
                 break;
-            case ZLOTY:
-                this.operationSum = Integer.toString(operationSum) + "zł";
+            case "ZLOTY":
+                this.operationSumSTRING = Integer.toString(operationSumSTRING) + "zł";
                 break;
-            case BYR:
-                this.operationSum = Integer.toString(operationSum) + "Br";
+            case "BYR":
+                this.operationSumSTRING = Integer.toString(operationSumSTRING) + "Br";
                 break;
             default:
                 break;
         }
     }
 
+    public void setOperationCurrency(String operationCurrency) {
+        this.operationCurrency = operationCurrency;
+    }
+
     public void setOperationDesc(String operationDesc) {
         this.operationDesc = operationDesc;
     }
 
-    public void setOperationCategory(PurchaseCategory operationCategory) {
+    public void setOperationCategory(String operationCategory) {
         this.operationCategory = operationCategory;
     }
 
-    public void setCurrencyEnum(CurrencyEnum currencyEnum) {
-        this.currencyEnum = currencyEnum;
-    }
-
-    public void setOperationType(OperationType operationType) {
+    public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
 }
